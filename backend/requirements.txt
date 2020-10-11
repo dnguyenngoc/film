@@ -1,4 +1,5 @@
 flask
 flask_cors
-flask_sqlalchemy
-flask_mysqldb
+python-mysqldb
+sqlalchemy
+mysql-connector-python
