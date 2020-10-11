@@ -8,6 +8,7 @@
 from flask import Flask
 from flask_cors import CORS
 from app.api.router import router as routers
+from app.database.db import db_session
 
 ############################ Initialization ###################################
 app = Flask(__name__)
