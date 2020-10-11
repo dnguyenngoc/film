@@ -1,0 +1,49 @@
+version: '3'
+services:
+
+  # Backend / API
+  backend:
+    container_name: backend
+    build: ../backend
+    volumes:
+      - ../backend/app/:/app/
+    restart: always
+    env_file:
+      - ./settings/environtments/development.env
+    ports:
+      - '80:80'
+      - '4200:80'
+    depends_on:
+      - database
+    networks:
+      - filmnet
+  
+  # Database mysql
+  database:
+    image: mysql:5.7
+    volumes:
+      - ./settings/db_data:/var/lib/mysql
+    restart: always
+    ports:
+      - '32000:3306'
+    env_file:
+        - ./settings/environtments/development.env
+    networks:
+      - filmnet
+
+  # PHP admin just for dev
+  phpmyadmin:
+    container_name: phpmyadmin
+    depends_on: 
+      - database
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+        - ./settings/environtments/development.env
+    networks:
+      - filmnet
+
+networks:
+    filmnet:
