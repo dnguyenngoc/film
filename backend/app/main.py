@@ -5,10 +5,10 @@
 #   A back end basic with cors using flask 
 
 ############################ Import ###########################################
-from flask import Flask
+from flask import (
+    Flask, render_template
+)
 from flask_cors import CORS
-from app.api.router import router as routers
-from app.database.db import db_session
 
 ############################ Initialization ###################################
 app = Flask(__name__)
@@ -17,8 +17,14 @@ app = Flask(__name__)
 CORS(app)
 
 # config load all router from api folder
-for routes in routers:
-    app.register_blueprint(routes)
+# routers = router.get_router()
+# for routes in routers:
+#     app.register_blueprint(routes)
+
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('home.html')
+
 
 ############################ Main Function ####################################
 if __name__ == "__main__":

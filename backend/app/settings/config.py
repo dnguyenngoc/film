@@ -14,7 +14,7 @@ API_V1_STR = "/api/v1"
 ######################################### TOKEN CONFIG ###############################################
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 2
 FRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 8
-SECRET_KEY = os.getenvb(b"SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 if not SECRET_KEY:
     SECRET_KEY = os.urandom(32)
 
