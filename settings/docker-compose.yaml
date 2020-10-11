@@ -14,6 +14,8 @@ services:
       - '4200:80'
     depends_on:
       - database
+    command:
+      sh -c  "chmod +x migrations/restore.sh && migrations/restore.sh && python3 main.py"
     networks:
       - filmnet
   

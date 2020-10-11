@@ -7,7 +7,7 @@ from alembic import context
 from settings import config as environments
 
 # DB models
-from database.models import *
+from database.models import accounts
 from database.base_class import Base
 
 config = context.config
