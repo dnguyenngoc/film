@@ -1,5 +1,6 @@
 node_modules
-db_data
 .vscode/
 __pycache__/
+db_data
+
 
