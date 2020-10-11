@@ -10,7 +10,7 @@ from flask import (
 )
 from flask_cors import CORS
 
-from app.database.db import (
+from database.db import (
     db_session, mysql, cursor
 )
 
@@ -32,6 +32,14 @@ def teardown_appcontext(response_or_exc):
 # for routes in routers:
 #     app.register_blueprint(routes)
 
+if app.debug is not True:   
+    import logging
+    from logging.handlers import RotatingFileHandler
+    file_handler = RotatingFileHandler('python.log', maxBytes=1024 * 1024 * 100, backupCount=20)
+    file_handler.setLevel(logging.ERROR)
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    file_handler.setFormatter(formatter)
+    app.logger.addHandler(file_handler)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -41,4 +49,4 @@ def index():
 ############################ Main Function ####################################
 if __name__ == "__main__":
     # run backend server on http://localhost:80/
-    app.run(host = 'localhost',port=80, debug=True)
+    app.run(host = 'localhost',port=80, debug=False)

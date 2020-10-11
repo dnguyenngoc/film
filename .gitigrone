@@ -1,4 +1,5 @@
 node_modules
 db_data
-__pycache__
-.vscode
+.vscode/
+__pycache__/
+

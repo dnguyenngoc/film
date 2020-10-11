@@ -2,16 +2,14 @@ FROM tiangolo/uwsgi-nginx-flask:python3.8
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
-RUN apk --update add bash nano
-
 WORKDIR /app/
 
 COPY ./requirements.txt requirements.txt
 
-COPY ./app /app
+COPY ./app/ /app/
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 EXPOSE 80
 
-ENTRYPOINT ["python3","./app/main.py"]
+ENTRYPOINT ["python3","main.py"]

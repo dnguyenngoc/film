@@ -3,13 +3,12 @@ services:
 
   # Backend / API
   backend:
-    container_name: backend
     build: ../backend
     volumes:
       - ../backend/app/:/app/
     restart: always
     env_file:
-      - ./settings/environtments/development.env
+      - ./environments/development.env
     ports:
       - '80:80'
       - '4200:80'
@@ -27,13 +26,12 @@ services:
     ports:
       - '32000:3306'
     env_file:
-        - ./settings/environtments/development.env
+        - ./environments/development.env
     networks:
       - filmnet
 
   # PHP admin just for dev
   phpmyadmin:
-    container_name: phpmyadmin
     depends_on: 
       - database
     image: phpmyadmin/phpmyadmin
@@ -41,7 +39,7 @@ services:
     ports:
       - '8080:80'
     environment:
-        - ./settings/environtments/development.env
+        - ./environments/development.env
     networks:
       - filmnet
 

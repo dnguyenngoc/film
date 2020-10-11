@@ -1,5 +1,5 @@
 import mysql.connector
-from app.settings import config
+from settings import config
 
 mydb = mysql.connector.connect(
   host=config.MYSQL_SERVER,

@@ -1,5 +1,5 @@
 from flask import jsonify
-from app.main import app
+from main import app
 
 # 400 Bad Request
 @app.errorhandler(400)

@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import jsonify
 from flask import request
 from flask import render_template
-from app.utils import exception
+from utils import exception
 
 router = Blueprint('accounts', __name__)
 

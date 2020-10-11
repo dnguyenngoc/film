@@ -1,5 +1,5 @@
-from app.api.resources.test_resources import router as test_resources
-from app.api.resources.account_resources import router as account_resources
+from api.resources.test_resources import router as test_resources
+from api.resources.account_resources import router as account_resources
 
 def get_router():
     router = []
