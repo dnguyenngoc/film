@@ -1,17 +1,17 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
+FROM node:alpine as builder
+
+WORKDIR /app/
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
-RUN apk --update add bash nano
+RUN npm install
 
-WORKDIR /backend
+COPY ./film/ /app/
 
-COPY ./requirements.txt requirements.txt
+RUN npm run build
 
-COPY ./app /app
-
-RUN pip install -r requirements.txt
+FROM nginx
 
 EXPOSE 80
 
-ENTRYPOINT ["python3","./backend/app/main.py"]
+COPY --from=builder /app/build /usr/share/nginx/html
