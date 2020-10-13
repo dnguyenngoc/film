@@ -4,3 +4,9 @@ sqlalchemy
 mysql-connector-python
 pymysql
 alembic
+wtforms
+datetime
+passlib
+bcrypt
+python-jose
+pycryptodome

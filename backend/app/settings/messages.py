@@ -6,3 +6,6 @@ METHOD_NOT_ALLOWED="Method Not Allowed"
 NOT_ACCEPTABLE="Not Acceptable"
 UNPROCESSABLE_ENTITY="Unprocessable Entity"
 INTERNAL_SERVER_ERROR="Internal Server Error"
+
+# response
+COMPLETE="Complete"
