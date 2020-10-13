@@ -1,20 +1,33 @@
 from flask import Blueprint
 from flask import jsonify
 from flask import request
-from utils import exception
-from flask import render_template
-from flask import abort
+from utils import ( 
+    exception, _response
+)
+from api.entities import account_requests as _res
+from api.controllers import account_controllers as control
+from security.wraps import token_required
+
 
 router = Blueprint('accounts', __name__)
 
-############################ ACCOUNTS API Implementation ###########################
-@router.route('/account/login', methods = ["POST", "GET"])
+###################################### ACCOUNTS API #########################################
+@router.route('/accounts/login', methods = ["POST"])
 def login():
     if request.method == "POST":
-        data_dict = {
-            "content": "account login chua lam nha"
-        }
-        return jsonify(data_dict), 200
-    elif request.method == "GET":
-        return render_template("login.html")
+        form = request.form
+        if _res.LoginRequestForm(form).validate():
+            return control.login(form.get("email"), form.get("password"))
+        return exception.custom422()
     return exception.custom405()
+
+
+@router.route('/accounts/fresh-token', methods = ["POST"])
+@token_required
+def fresh_token(user):
+    if request.method == "POST":
+        form = request.form
+        if _res.FreshTokenRequestForm(form).validate():
+            return control.fresh_token(user)
+        return exception.custom422()
+    return exception.custom422()
