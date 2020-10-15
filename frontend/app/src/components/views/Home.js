@@ -1,12 +1,17 @@
 
 import React from 'react';
-import ClickScollFilmList from "../slide-film-list/ClickScollFilmList"
+import ClickScollFilmList from "../default/slide-film-list/ClickScollFilmList"
+import data from './home_fake'
+
 class Home extends React.Component{
     render(){
         return(
-    
-            <ClickScollFilmList />
-    
+            <div>
+                <ClickScollFilmList 
+                 key={data.tagName}
+                 props={data}
+                />
+            </div>   
         )
     }
 } 
