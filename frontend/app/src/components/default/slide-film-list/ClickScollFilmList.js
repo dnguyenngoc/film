@@ -42,13 +42,11 @@ const  Content  = ({ className, props }) => {
 }
 
 const ClickScollFilmList = styled(Content)`
-    width: auto;
-    height: 365px; 
-    font-family: "Roboto Bold",sans-serif;
+    height: 380px; 
+    font-family: 'Source Sans Pro', sans-serif; 
     color: #fff;
-    background-color: black;
-    padding-left: 2rem;
-
+    padding-left: 6%;
+    min-width: 100%;
     .content__title {
         display: flex;
         font-size: 1.5rem;
@@ -61,15 +59,14 @@ const ClickScollFilmList = styled(Content)`
         }
         .location__right{
             font-size: 1.2rem;
-            margin-left: 80%;
+            margin-left: 70%;
         }
     }
-
     .content__info {
         display:flex;
         .content__data{
-            padding-left: 1rem;
-            font-size: 0.7rem;
+            padding-left: 1.2rem;
+            font-size: 0.8rem;
             .content__suggest{
                 // border: 0.01px solid #708090;    
                 .content__detail{
@@ -117,7 +114,7 @@ const ClickScollFilmList = styled(Content)`
             }
             .hidden{
                 display:none;
-                font-size: 0.6rem;
+                font-size: 0.7rem;
                 color: rgba(214, 228, 226, 0.644);
                 max-width: 150px;
             }
@@ -127,9 +124,9 @@ const ClickScollFilmList = styled(Content)`
                 display:block;
             }
             .content__suggest {
-                transition: transform .2s;
+                transition: transform 1s;
                 transform: scale(1.1);
-                border: 2px solid #708090;
+                border: 2px solid  #FF8C00;
             }
         }
     }
