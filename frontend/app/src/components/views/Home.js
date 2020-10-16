@@ -3,13 +3,17 @@ import React from 'react';
 import ClickScollFilmList from "../default/slide-film-list/ClickScollFilmList"
 import HomeTrailer from "../default/home-trailer/HomeTrailer"
 import styled from 'styled-components'
+import Header from "../default/Header";
 
-import data from './home_fake'
+import xxx from './home_fake'
+
+const thinhHanh = xxx.thinhHanh
+const xemNhieu  = xxx.xemNhieu
 
 const Content = ({ className })  =>{
     return(
         <div className={className}>
-       
+            <div><Header/></div>
             <div className="block1">
                 <HomeTrailer/>
             </div>         
@@ -17,18 +21,17 @@ const Content = ({ className })  =>{
             <div className="block3"/>
             <div className="block2">
                 <ClickScollFilmList 
-                    key={data.tagName}
-                    props={data}
+                    key={thinhHanh.tagName}
+                    props={thinhHanh}
                 />
             </div>
             <div className="block3" />
             <div className="block4">
                 <ClickScollFilmList 
-                    key={data.tagName}
-                    props={data}
+                    key={xemNhieu.tagName}
+                    props={xemNhieu}
                 />
             </div>
-      
         </div>   
     )
 } 
