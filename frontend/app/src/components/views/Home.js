@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ClickScollFilmList from "../default/slide-film-list/ClickScollFilmList"
-import HomeTrailer from "../default/home-trailer/HomeTrailer"
+import HomeTrailer from "../default/video-play/HomeTrailer"
 import styled from 'styled-components'
 import Header from "../default/Header";
 
