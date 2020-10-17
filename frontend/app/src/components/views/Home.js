@@ -16,6 +16,7 @@ const Content = ({ className })  =>{
             <div><Header/></div>
             <div className="block1">
                 <HomeTrailer/>
+               
             </div>         
             <div className="block5"/>   
             <div className="block3"/>
@@ -68,5 +69,6 @@ const Home = styled(Content)`
         position: relative;
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(22, 0, 0, 0.8));
     }
+   
 `
 export default Home;

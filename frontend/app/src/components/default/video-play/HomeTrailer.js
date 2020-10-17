@@ -37,7 +37,13 @@ const HomeTrailer = styled(Result)`
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position:static;
+
         }
+    }
+    .content__detail{
+        position: stickly;
+        marigin-top: 42rem;
     }
         
 `
