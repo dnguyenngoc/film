@@ -1,6 +1,5 @@
-import './index.scss';
+import './styles/FilmDetails.scss';
 import React from 'react';
-
 
 // @id: int notnull,
 // @name: string notnull,
@@ -16,6 +15,7 @@ import React from 'react';
 // @view: int nullable,
 // @actor: list[string] nullable,
 // @role: string nullable
+
 export default class FilmDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -36,7 +36,6 @@ export default class FilmDetail extends React.Component {
             actor: props.actor
         }
     };  
- 
     render(){
         return (
             <div className="filmdetail">
@@ -87,13 +86,13 @@ function actorDetail(actor){
 
 function makeActorGroupThree(actor){
     const data = []
-    var len = actor.length
     var i = 0;
-    if (actor !== null) {
+    if (actor) {
+        var len = actor.length
         while (i <len) {
             data.push(
-            <div className="filmdetail__content__two">{
-                [actorDetail(actor[i]), actor[i+1] ? actorDetail(actor[i+1]): "", actor[i+2]? actorDetail(actor[i+2]): ""]}
+            <div className="filmdetail__content__two">{[actorDetail(actor[i]), actor[i+1] ? 
+                actorDetail(actor[i+1]): "", actor[i+2]? actorDetail(actor[i+2]): ""]}
             </div>)
             i=i+3
         }
@@ -103,7 +102,7 @@ function makeActorGroupThree(actor){
 }
 
 function ratiingMake(star) {
-    if (star !== null){
+    if (star){
         const end = []
         for (let i = 0; i < 5; i++) {
             if (star-i >= 1) end.push(<label className="full"></label>)
@@ -119,7 +118,7 @@ function ratiingMake(star) {
 }        
 
 function stypeMake(style) {
-    if (style !== null){
+    if (style){
         return style.map(item=><p className="style">{item}</p>)
     }
     return ""
