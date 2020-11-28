@@ -6,7 +6,7 @@ Film
 [![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://vntravel.tech)
 ![Funny](https://img.shields.io/badge/funny-yes-yellow.svg)
 ![python](https://img.shields.io/badge/python-3.8-blue.svg)
-![node](https://img.shields.io/badge/node-alpine-green.svg)
+![node](https://img.shields.io/badge/node-alpine:latest-green.svg)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/dnguyenngoc/film/blob/master/LICENSE)
 
 
