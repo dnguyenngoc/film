@@ -35,7 +35,6 @@ def fetch_by_name(name):
             try:
                 thumbnail = str(item.select_one('a > div.movie-thumbnail').get_attribute_list('style')[0])
                 thumbnail = thumbnail.replace('background:url(', '').replace('); background-size: cover;','')
-
             except:
                 pass
             obj = PhimFetch(
