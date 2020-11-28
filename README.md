@@ -1,18 +1,44 @@
-# film
-This is a project about film. I try to learn react native. ~~
+<!-- License for this project -->
+License
+=========
+[![license](https://github.com/dnguyenngoc/film/raw/master/statics/license.png)](https://github.com/dnguyenngoc/film/blob/master/LICENSE)
 
-## BACKEND FOR DEVELOPER
 
-1. Clone the repo
-```sh
-git clone https://github.com/dnguyenngoc/film.git
-```
+<!-- Overview for projecj include logo and description and gallery -->
+Overview
+=========
+[Film Project](https://github.com/dnguyenngoc/film) is a website for my friend can easy get more information from internet.
+<img
+  src="https://github.com/dnguyenngoc/film/raw/master/statics/project_logo.png"
+  alt="Film"
+  width="500"
+/>
+A modern, funny and cute web application -.-!.
 
-## FRONTEND
-...
+## Screenshots & Gifs
 
-<!-- CONTACT -->
-## Contact
+**Gallery**
+
+<kbd><a href="https://superset.apache.org/gallery"><img title="Gallery" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/gallery.png"></a></kbd><br/>
+
+
+
+<!-- Just some document for backend and frontend -->
+Documentation
+=======
+
+## Backend
+
+will be update soon!
+
+## Frontend
+
+will be update soon!
+
+
+<!--follow intagram or CONTACT to me if you have any question? -->
+Contact
+=======
 
 Duy Nguyen - [@duy.nguyen.ngoc](https://www.instagram.com/duy.nguyen.ngoc/) - duynguyenngoc@hotmail.com
 
