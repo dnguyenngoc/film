@@ -1,7 +1,7 @@
 <!-- License for this project -->
 Film
 =========
-[![Build Status](https://travis-ci.org/ali-irawan/xtra.svg?branch=master)](https://travis-ci.org/ali-irawan/xtra)
+[![Build Status](https://github.com/dnguyenngoc/film//workflows/PRODUCTION/badge.svg)
 [![Download](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)
 [![Stable](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)
 [![Unstable](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)
@@ -14,10 +14,11 @@ Overview
 =========
 [Film Project](https://github.com/dnguyenngoc/film) is a website for my friend can easy get more information from internet.
 <img
-  src="https://github.com/dnguyenngoc/film/raw/master/statics/project_logo.png"
+  src="https://github.com/dnguyenngoc/film/raw/master/statics/project-logo.jpg"
   alt="Film"
   width="500"
 />
+
 A modern, funny and cute web application -.-!.
 
 ## Screenshots & Gifs
