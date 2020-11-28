@@ -20,7 +20,7 @@ Overview
   width="200"
 />
 
-[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friend can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application -.-!.
+[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friend can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application (~o~).
 
 ## Screenshots & Gifs
 
