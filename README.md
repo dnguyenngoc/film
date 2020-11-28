@@ -14,7 +14,7 @@ Overview
 =========
 [Film Project](https://github.com/dnguyenngoc/film) is a website for my friend can easy get more information from internet.
 <img
-  src="https://github.com/dnguyenngoc/film/raw/master/statics/project-logo.jpg"
+  src="https://github.com/dnguyenngoc/film/blob/main/statics/project-logo.jpg?raw=true"
   alt="Film"
   width="500"
 />
