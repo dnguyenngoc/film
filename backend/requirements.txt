@@ -9,4 +9,5 @@ bcrypt
 python-jose
 pycryptodome
 psycopg2
-amqpstorm
+requests
+beautifulsoup4
