@@ -1,11 +1,11 @@
 <!-- License for this project -->
 Film
 =========
-[![Build Status](https://github.com/dnguyenngoc/film//workflows/PRODUCTION/badge.svg)
-[![Download](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)](https://poser.pugx.org/ali-irawan/xtra/d/total.svg)
-[![Stable](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/stable.svg)
+[![Build Status]](https://github.com/dnguyenngoc/film//workflows/PRODUCTION/badge.svg)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 [![Unstable](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)](https://poser.pugx.org/ali-irawan/xtra/v/unstable.svg)
-[![License](https://poser.pugx.org/ali-irawan/xtra/license.svg)](https://poser.pugx.org/ali-irawan/xtra/license.svg)
+<!-- [![License](https://poser.pugx.org/ali-irawan/xtra/license.svg)](https://poser.pugx.org/ali-irawan/xtra/license.svg) -->
+[![License](https://img.shields.io/badge/license-DN-lime.svg)
 <!-- [![license](https://github.com/dnguyenngoc/film/raw/master/statics/license.png)](https://github.com/dnguyenngoc/film/blob/master/LICENSE) -->
 
 
@@ -16,7 +16,7 @@ Overview
 <img
   src="https://github.com/dnguyenngoc/film/blob/main/statics/project-logo.jpg?raw=true"
   alt="Film"
-  width="500"
+  width="200"
 />
 
 A modern, funny and cute web application -.-!.
