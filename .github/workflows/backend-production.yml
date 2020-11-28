@@ -4,16 +4,16 @@ on:
     branches:
     - production
     paths:
-    - frontend/**
+    - backend/**
   pull_request:
     branches:
     - production
     paths:
-    - frontend/**
+    - backend/**
 env:
   # Variable name
   PROJECT_NAME: film
-  FRONTEND_BASE: frontend
+  BASE_IMAGE: backend
 
 
   # dockerhub container
@@ -38,9 +38,9 @@ jobs:
     # [Step-3] buid and tag image from Dockerfile
     - name: Build and tag the image
       run: |
-        docker build -t $FRONTEND_BASE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$FRONTEND_BASE ./frontend/
+        docker build -t $BASE_IMAGE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE ./backend/
     
     # [Step-4] Push image to docker hub
     - name: Push image to DockerHub
       run: |
-        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$FRONTEND_BASE
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE
