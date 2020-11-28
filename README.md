@@ -20,13 +20,13 @@ Overview
   width="200"
 />
 
-[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friend can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application (~o~).
+[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friends can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application (~o~).
 
 ## Screenshots & Gifs
 
 **Gallery**
 
-<kbd><a href="https://superset.apache.org/gallery"><img title="Gallery" src="https://raw.githubusercontent.com/apache/incubator-superset/master/superset-frontend/images/screenshots/gallery.png"></a></kbd><br/>
+<kbd><a href="https://github.com/dnguyenngoc/film"><img title="Gallery" src="https://github.com/dnguyenngoc/film/blob/main/statics/image.jpg?raw=true"></a></kbd><br/>
 
 
 
