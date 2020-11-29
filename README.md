@@ -26,7 +26,12 @@ Overview
 
 **Gallery**
 
-<kbd><a href="https://github.com/dnguyenngoc/film"><img title="Gallery" src="https://github.com/dnguyenngoc/film/blob/main/statics/image.jpg?raw=true"></a></kbd><br/>
+<kbd>
+  <a href="https://github.com/dnguyenngoc/film">
+    <img title="Gallery" src="https://github.com/dnguyenngoc/film/blob/main/statics/image.jpg?raw=true">
+  </a>
+</kbd>
+<br/>
 
 
 
@@ -36,11 +41,11 @@ Documentation
 
 ## Backend
 
-will be update soon!
+Document Link: [(https://github.com/dnguyenngoc/film/blob/master/backend/README.md)]
 
 ## Frontend
 
-will be update soon!
+Document Link: [(https://github.com/dnguyenngoc/film/blob/master/fronted/README.md)]
 
 
 <!--follow intagram or CONTACT to me if you have any question? -->
