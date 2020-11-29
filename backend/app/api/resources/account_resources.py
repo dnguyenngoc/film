@@ -40,6 +40,6 @@ def register():
     if request.method == "POST":
         form = request.form
         if _res.RegistrationRequestForm(form).validate():
-            return control.register(form.)
+            return control.register(form)
         return exception.custom422()
     return exception.custom422()

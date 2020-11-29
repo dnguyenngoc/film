@@ -22,9 +22,11 @@ logger = logging.getLogger(__name__)
 
 ############################ Initialization ###################################
 app = Flask(__name__)
+
+app.config['JSON_AS_ASCII'] = False
+
 # this essitial for Cross Origin Resource Sharing with React frontend
 # https://flask-cors.readthedocs.io/en/latest/
-
 CORS(app)
 
 

@@ -11,3 +11,4 @@ pycryptodome
 psycopg2
 requests
 beautifulsoup4
+marshmallow
