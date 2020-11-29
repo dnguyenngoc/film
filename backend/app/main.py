@@ -4,15 +4,22 @@
 # Description:
 #   A back end basic with cors using flask 
 
+
 ############################ Import ###########################################
 from flask import (
     Flask
 )
+import logging
 from flask_cors import CORS
-
 from database.db import (
-    db_session, mysql, cursor
+    db_session
 )
+from settings import config
+
+
+logger = logging.getLogger(__name__)
+
+
 ############################ Initialization ###################################
 app = Flask(__name__)
 # this essitial for Cross Origin Resource Sharing with React frontend
@@ -20,15 +27,17 @@ app = Flask(__name__)
 
 CORS(app)
 
+
 @app.teardown_appcontext
 def teardown_appcontext(exeption = None):
     db_session.remove()
-    mysql.close()
+
 
 from api import router
 from security import wraps # can no needed but i think have will load with app
 
+
 ############################ Main Function ####################################
 if __name__ == "__main__":
-    # run backend server on http://localhost:80/
-    app.run(host = '0.0.0.0',port=80, debug=True)
+    # run backend server on http://localhost:8080/
+    app.run(host = '0.0.0.0',port=8080, debug=config.DEBUG)

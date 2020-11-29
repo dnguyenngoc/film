@@ -4,7 +4,7 @@ from settings import config
 from sqlalchemy.sql import text
 import logging
 
-data = config.SQLALCHEMY_DATABASE_URI_MYSQL
+data = config.SQLALCHEMY_DATABASE_URI
 engine = create_engine(data, pool_pre_ping=True, echo=True)
 connection = engine.connect()
 try:

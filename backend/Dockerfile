@@ -1,4 +1,4 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
+FROM python:3.9-buster
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
@@ -10,6 +10,8 @@ COPY ./app/ /app/
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 80
+RUN chmod +x migrations/restore.sh
 
-# ENTRYPOINT ["python3","main.py"]
+# ENTRYPOINT [ "migrations/restore.sh && python3 main.py" ]
+
+EXPOSE 8080

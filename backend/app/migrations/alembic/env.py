@@ -1,22 +1,27 @@
+# Need change environment.SQLALCHEMY_DATABASE_URI to uri database
 from logging.config import fileConfig
-
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+
 
 from alembic import context
 from settings import config as environments
 
-# DB models
+
+# DB models base model and model folder 
 from database.models import accounts
 from database.base_class import Base
 
+
 config = context.config
-config.set_main_option("sqlalchemy.url", environments.SQLALCHEMY_DATABASE_URI_MYSQL)
+config.set_main_option("sqlalchemy.url", environments.SQLALCHEMY_DATABASE_URI)
 
 fileConfig(config.config_file_name)
 
+
 # Exceute db models
 target_metadata = Base.metadata
+
 
 def run_migrations_offline():
     url = config.get_main_option("sqlalchemy.url")
@@ -28,6 +33,7 @@ def run_migrations_offline():
     )
     with context.begin_transaction():
         context.run_migrations()
+
 
 def run_migrations_online():
     connectable = engine_from_config(
@@ -41,6 +47,7 @@ def run_migrations_online():
         )
         with context.begin_transaction():
             context.run_migrations()
+
 
 if context.is_offline_mode():
     run_migrations_offline()
