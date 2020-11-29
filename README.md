@@ -38,20 +38,21 @@ Overview
 <!-- Just some document for backend and frontend -->
 Documentation
 =======
+Project Link: [https://github.com/dnguyenngoc/film](https://github.com/dnguyenngoc/film.git)
 
 ## Backend
 
-Document Link: [(https://github.com/dnguyenngoc/film/blob/master/backend/README.md)]
+Document Link: (https://github.com/dnguyenngoc/film/blob/master/backend/README)
 
 ## Frontend
 
-Document Link: [(https://github.com/dnguyenngoc/film/blob/master/fronted/README.md)]
+Document Link: (https://github.com/dnguyenngoc/film/blob/master/fronted/README)
 
 
 <!--follow intagram or CONTACT to me if you have any question? -->
 Contact
 =======
 
-Duy Nguyen - [@duy.nguyen.ngoc](https://www.instagram.com/duy.nguyen.ngoc/) - duynguyenngoc@hotmail.com
+Instagram: [@duy.nguyen.ngoc](https://www.instagram.com/duy.nguyen.ngoc/) <3 <3
 
-Project Link: [https://github.com/dnguyenngoc/film](https://github.com/dnguyenngoc/film.git)
+Email: duynguyenngoc@hotmail.com
