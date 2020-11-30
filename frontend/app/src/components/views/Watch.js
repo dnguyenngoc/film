@@ -1,9 +1,10 @@
 
 import React from 'react';
 import FilmDetail from "../../components/default/film/FilmDetail";
-import './styles/Watch.scss'
 import Loading from "../../components/default/loading/Loading"
 import Axios from 'axios';
+import './Watch.scss'
+
 
 function fakeData(){
     return {

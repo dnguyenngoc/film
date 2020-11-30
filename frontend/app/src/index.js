@@ -4,13 +4,13 @@ import ReactDOM from "react-dom"
 
 import routesConfig from "./routes/routesConfig";
 import AppRoute from "./routes/AppRoute";
-import Header from "./components/default/Header";
+
+import Watch from './components/views/Watch';
 
 export class App extends React.Component {
   render() {
     return ( 
       <Router>
-        {/* <Header/> */}
         <Switch>
           {
             routesConfig.map(
@@ -24,13 +24,13 @@ export class App extends React.Component {
               )
             )
           }
-          <Route exact path="/" render={() => (<Redirect to="/home"/>)} />   
+          <Route exact path="/" render={() => (<Redirect to="/home"/>)} />
         </Switch>
       </Router>
     );
   }
 }
-ReactDOM.render( <
-  App / > ,
+ReactDOM.render( 
+  <App/> ,
   document.getElementById("root")
 );
