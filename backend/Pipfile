@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+alembic = "*"
+passlib = "*"
+bcrypt = "*"
+python-jose = "*"
+pycryptodome = "*"
+psycopg2-binary = "*"
+requests = "*"
+beautifulsoup4 = "*"
+marshmallow = "*"
+Flask = "*"
+Flask-Cors = "*"
+SQLAlchemy = "*"
+WTForms = "*"
+DateTime = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

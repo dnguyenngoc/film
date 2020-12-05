@@ -1,14 +1,20 @@
-FROM python:3.9-buster
+FROM python:3.8-buster
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
 WORKDIR /app/
 
-COPY ./requirements.txt requirements.txt
+RUN pip3 install pipenv
+
+COPY Pipfile* /app/
+
+RUN cd /app && pipenv lock --requirements > requirements.txt
+
+# COPY ./requirements.txt /app/requirements.txt
+
+RUN pip3 install -r /app/requirements.txt
 
 COPY ./app/ /app/
-
-RUN pip3 install -r requirements.txt
 
 RUN chmod +x migrations/restore.sh
 

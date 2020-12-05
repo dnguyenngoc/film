@@ -7,7 +7,7 @@ EVIRONMENT = os.getenv('EVIRONMENT')
 if EVIRONMENT == 'development':
     DEBUG = True
 else: 
-    DEBUG == False
+    DEBUG = False
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 2
 FRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 8    
@@ -16,8 +16,8 @@ ALGORITHM = "HS256"
 ROUNDS = 1994
 DIGEST = 'sha256'
 SALT_SIZE = 16
-SALT = bytes(os.environ["SALT"], "utf-8").decode('unicode_escape')
 # SALT = os.urandom(SALT_SIZE)
+SALT = bytes(os.environ["SALT"], "utf-8").decode('unicode_escape')
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DATABASE_TYPE = os.getenv("DATABASE_TYPE")
