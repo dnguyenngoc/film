@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  flask-backend:
+    build: .
+    restart: always
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./app:/app/
+    network_mode: host
+    command: sh -c "migrations/restore.sh && python3 main.py"

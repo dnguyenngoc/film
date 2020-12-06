@@ -1,29 +1,39 @@
-import os
+import configparser
 
-PROJECT_NAME = os.getenv("PROJECT_NAME")
-API_V1_STR = "/api/v1"
+cfg = configparser.ConfigParser()
+cfg.read('/app/environment.ini')
 
-EVIRONMENT = os.getenv('EVIRONMENT')
-if EVIRONMENT == 'development':
-    DEBUG = True
-else: 
-    DEBUG = False
+#========================================================================
+#                             PROJECT INFORMATION 
+#========================================================================
+VERISON = cfg['project']['version']
+PROJECT_NAME = cfg['project']['name']
+ENVIRONMENT = cfg['project']['environment']
+DEBUG = cfg['project'].getboolean('debug', False)
+SECRET_KEY = cfg['project']['serect_key']
 
-ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 2
-FRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 8    
-ENCODE_TYPE = "utf-8"    
-ALGORITHM = "HS256"
-ROUNDS = 1994
-DIGEST = 'sha256'
-SALT_SIZE = 16
-# SALT = os.urandom(SALT_SIZE)
-SALT = bytes(os.environ["SALT"], "utf-8").decode('unicode_escape')
 
-SECRET_KEY = os.getenv("SECRET_KEY")
-DATABASE_TYPE = os.getenv("DATABASE_TYPE")
-DATABASE_USER = os.getenv("DATABASE_USER")
-DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
-DATABASE_HOST = os.getenv("DATABASE_HOST")
-DATABASE_NAME = os.getenv("DATABASE_NAME")
-SQLALCHEMY_DATABASE_URI = (f"{DATABASE_TYPE}://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}/{DATABASE_NAME}")
-       
+#=========================================================================
+#                          AUTHENTICATE INFORMATION 
+#=========================================================================
+ENCODE_TYPE = cfg['authenticate']['encode']
+DIGEST = cfg['authenticate']['digest']    
+ALGORITHM = cfg['authenticate']['algorithm']
+ROUNDS = cfg['authenticate'].getint('rounds')
+SALT_SIZE = cfg['authenticate'].getint('salt_size')
+SALT = bytes(cfg['authenticate']['salt'], "utf-8").decode('unicode_escape')
+ACCESS_TOKEN_EXPIRE_MINUTES = cfg['authenticate']['access_expire']
+FRESH_TOKEN_EXPIRE_MINUTES = cfg['authenticate']['fresh_expire']  
+
+
+#=========================================================================
+#                            DATABASE INFORMATION 
+#=========================================================================
+SQLALCHEMY_DATABASE_URI = "{type}://{user}:{pw}@{host}:{port}/{db}".format(
+    type=cfg['database']['type'],
+    user=cfg['database']['user'],
+    pw=cfg['database']['password'],
+    host=cfg['database']['host'],
+    port=cfg['database']['port'],
+    db=cfg['database']['db_name']
+) 

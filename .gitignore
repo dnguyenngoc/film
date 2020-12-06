@@ -6,3 +6,4 @@ build
 _development
 restore.sh
 dist
+*.ini
