@@ -7,7 +7,8 @@ import HomeTrailer from  '../../components/video/HomeTrailer';
 
 import './Home.scss'
 
-
+const apiV1 = '/api/v1'
+const restService = 'http://localhost:8080'
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -16,25 +17,30 @@ export default class Home extends React.Component {
             isLoading: true,
             phimLe: {
                 data: [],
-                page: 1
+                page: 1,
+                nextPage: true
             },
-            phimBo: [],
-            thinhHanh: [],
-            xemNhieu: [],
-            page: 1,
+            phimBo: {
+                data: [],
+                page: 1,
+                nextPage: true
+
+            },
+            thinhHanh: {
+                data: [],
+                page: 1,
+                nextPage: true
+            },
             trailer: null
         }
     }
     componentDidMount() {
-        // const accessToken = await this.props.authService.getAccessToken()
-
         const requestOptions = {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         };
 
-
-        Axios.get(`http://localhost:8080/api/v1/phimmoi/phim-le/${this.state.page}`, requestOptions)
+        Axios.get(`${restService}${apiV1}/phimmoi/phim-le/${this.state.phimLe.page}`, requestOptions)
             .then(response=>{
                 if (response.status === 200) {
                     this.setState({isLoading: false, phimLe: response.data})
@@ -44,7 +50,7 @@ export default class Home extends React.Component {
                 console.log(JSON.stringify(error))
             })    
         
-        Axios.get(`http://localhost:8080/api/v1/trailer`, requestOptions)
+        Axios.get(`${restService}${apiV1}/trailer`, requestOptions)
             .then(response=> {
                 if (response.status === 200) {
                     this.setState({isLoading: false, trailer: response.data})
@@ -69,7 +75,11 @@ export default class Home extends React.Component {
                         key={this.state.page}
                         trailer={this.state.trailer}
                     />
-                </div>         
+                </div>
+                <div className='phim__le'>
+
+                </div>
+
                 {/* <div className="block5"/>   
                 <div className="block3"/>
                 <div className="block2">
