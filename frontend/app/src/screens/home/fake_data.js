@@ -1,14 +1,3 @@
-
-import React from 'react';
-import ClickScollFilmList from "../default/slide-film-list/ClickScollFilmList"
-import HomeTrailer from "../default/video/HomeTrailer"
-import Header from "../default/Header";
-import './Home.scss'
-import Loading from "../../components/default/loading/Loading.js"
-
-
-
-
 const thinhHanh = {
     tagName: "Thịnh Hành",
     data:
@@ -41,46 +30,4 @@ data:
         {logo: require("../../assets/fake/poster/ironmen.jpg"), name: "Iron Men", description: "Iron Men được mua bản quyền sản xuất", role:"độc quyền", type: "Việt Sub", progress:"final"}
     ]
 
-}
-
-
-export default class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoading: true,
-            thinhHanh: [],
-            xemNhieu: []
-        }
-    }
-    componentDidMount() {
-    } 
-    render(){
-        if(this.state.isLoading) {
-            return (<Loading/>)
-        }
-        return(
-            <div className="home">
-                <div><Header/></div>
-                <div className="home__trailer">
-                    <HomeTrailer/> 
-                </div>         
-                <div className="block5"/>   
-                <div className="block3"/>
-                <div className="block2">
-                    <ClickScollFilmList 
-                        key={thinhHanh.tagName}
-                        props={thinhHanh}
-                    />
-                </div>
-                <div className="block3" />
-                <div className="block4">
-                    <ClickScollFilmList 
-                        key={xemNhieu.tagName}
-                        props={xemNhieu}
-                    />
-                </div>
-            </div>   
-        )
-    }
 }

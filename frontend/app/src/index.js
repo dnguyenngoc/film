@@ -5,8 +5,6 @@ import ReactDOM from "react-dom"
 import routesConfig from "./routes/routesConfig";
 import AppRoute from "./routes/AppRoute";
 
-import Watch from './components/views/Watch';
-
 export class App extends React.Component {
   render() {
     return ( 

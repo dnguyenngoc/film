@@ -7,7 +7,7 @@ services:
       - ./backend/app:/app/
     network_mode: host
     command: sh -c "migrations/restore.sh && python3 main.py"
-  react-frontend:
-    build: ./frontend/
-    restart: always
-    network_mode: host
+  # react-frontend:
+  #   build: ./frontend/
+  #   restart: always
+  #   network_mode: host
