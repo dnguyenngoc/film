@@ -25,7 +25,7 @@ router = Blueprint('phimmoi_v1_resources', __name__)
 #     return exception.custom405()
 
 
-@router.route('/api/v1/phimmoi/phim-le/<page>', methods = ["GET"])
+@router.route('/api/v1/phimmoi/phim-le/<int:page>', methods = ["GET"])
 def fetch_phimle(page):
     if request.method == "GET":
         if request_entities.page_validates(page):

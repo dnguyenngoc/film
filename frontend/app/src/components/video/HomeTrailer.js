@@ -1,50 +1,24 @@
 import React from 'react';
-import styled from 'styled-components'
+import './HomeTrailer.scss'
 
-const url = 'https://www.youtube.com/watch?v=hdjiF4VQp70&feature=youtu.be'
-
-
-
-const Result = ({ className, props }) => {
-    return(
-        <div className={className}>
+const HomeTrailer = ({ trailer }) => {
+    if (trailer === null) 
+        return (
+            <div className="null__trailer"> 
+                <img src='https://www.whats-on-netflix.com/wp-content/uploads/2020/04/netflix-top50-May-2020.png'/>     
+            </div>
+        )
+    return (
+        <div className="home__trailer">
             <div className="content__video">
                 <video 
                     autoPlay={true}
                     muted={true} 
                     loop={true} 
-                    src={require('../../../assets/fake/video/test.mp4')}
+                    src={trailer}
                 />
             </div>
         </div>
     )
 }
-
-const HomeTrailer = styled(Result)`
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    .content__video{
-        video {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position:static;
-
-        }
-    }
-    .content__detail{
-        position: stickly;
-        marigin-top: 42rem;
-    }
-        
-`
-export default HomeTrailer ;
+export default HomeTrailer;

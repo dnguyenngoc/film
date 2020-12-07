@@ -1,11 +1,12 @@
 
 import React from 'react';
-import Header from "../default/Header";
+import Axios from 'axios';
+import Header from "../../components/header/Header";
+import Loading from "../../components/loading/Loading";
+import HomeTrailer from  '../../components/video/HomeTrailer';
 
-// import ClickScollFilmList from "../default/slide-film-list/ClickScollFilmList"
-// import HomeTrailer from "../default/video/HomeTrailer"
 import './Home.scss'
-import Loading from "../../components/default/loading/Loading.js"
+
 
 
 export default class Home extends React.Component {
@@ -13,11 +14,46 @@ export default class Home extends React.Component {
         super(props);
         this.state = {
             isLoading: true,
+            phimLe: {
+                data: [],
+                page: 1
+            },
+            phimBo: [],
             thinhHanh: [],
-            xemNhieu: []
+            xemNhieu: [],
+            page: 1,
+            trailer: null
         }
     }
     componentDidMount() {
+        // const accessToken = await this.props.authService.getAccessToken()
+
+        const requestOptions = {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+        };
+
+
+        Axios.get(`http://localhost:8080/api/v1/phimmoi/phim-le/${this.state.page}`, requestOptions)
+            .then(response=>{
+                if (response.status === 200) {
+                    this.setState({isLoading: false, phimLe: response.data})
+                    console.log(this.state.phimLe)
+                }
+            }).catch(function (error) {
+                console.log(JSON.stringify(error))
+            })    
+        
+        Axios.get(`http://localhost:8080/api/v1/trailer`, requestOptions)
+            .then(response=> {
+                if (response.status === 200) {
+                    this.setState({isLoading: false, trailer: response.data})
+                    console.log(this.state.trailer)
+
+                }
+            }).catch(function (error) {
+                console.log(JSON.stringify(error))
+            })   
     } 
     render(){
         if(this.state.isLoading) {
@@ -25,11 +61,16 @@ export default class Home extends React.Component {
         }
         return(
             <div className="home">
-                <div><Header/></div>
-                {/* <div className="home__trailer">
-                    <HomeTrailer/> 
+                <div>
+                    <Header/>
+                </div>
+                <div className="home__trailer">
+                    <HomeTrailer
+                        key={this.state.page}
+                        trailer={this.state.trailer}
+                    />
                 </div>         
-                <div className="block5"/>   
+                {/* <div className="block5"/>   
                 <div className="block3"/>
                 <div className="block2">
                     <ClickScollFilmList 
