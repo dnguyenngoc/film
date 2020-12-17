@@ -7,3 +7,4 @@ _development
 restore.sh
 dist
 *.ini
+*.mp4

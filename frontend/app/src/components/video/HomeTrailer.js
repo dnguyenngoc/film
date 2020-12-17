@@ -1,5 +1,7 @@
 import React from 'react';
 import './HomeTrailer.scss'
+import fake from './Gravity - 2K Trailer.mp4'
+
 
 const HomeTrailer = ({ trailer }) => {
     if (trailer === null) 
@@ -15,7 +17,7 @@ const HomeTrailer = ({ trailer }) => {
                     autoPlay={true}
                     muted={true} 
                     loop={true} 
-                    src={trailer}
+                    src={fake}
                 />
             </div>
         </div>

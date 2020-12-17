@@ -55,7 +55,6 @@ export default class Home extends React.Component {
                 if (response.status === 200) {
                     this.setState({isLoading: false, trailer: response.data})
                     console.log(this.state.trailer)
-
                 }
             }).catch(function (error) {
                 console.log(JSON.stringify(error))
@@ -67,9 +66,8 @@ export default class Home extends React.Component {
         }
         return(
             <div className="home">
-                <div>
-                    <Header/>
-                </div>
+                <Header/>
+                {/* <div className='remove'></div> */}
                 <div className="home__trailer">
                     <HomeTrailer
                         key={this.state.page}
