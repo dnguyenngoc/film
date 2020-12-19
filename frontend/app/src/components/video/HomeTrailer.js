@@ -16,7 +16,7 @@ const HomeTrailer = ({ trailer }) => {
                 <video 
                     autoPlay={true}
                     muted={true} 
-                    loop={true} 
+                    loop={false} 
                     src={fake}
                 />
             </div>
