@@ -1,24 +1,21 @@
 
 import React from 'react';
 import Axios from 'axios';
-import Header from "../../components/header/Header";
 import Loading from "../../components/loading/Loading";
 import HomeTrailer from  '../../components/video/HomeTrailer';
-import HotNew from  '../../components/scoll/HotNew';
-
-import './Home.scss'
-
+import ListFilm from  '../../components/scoll/ListFilm';
 
 
 const apiV1 = '/api/v1'
 const restService = 'http://localhost:8080'
 
-export default class Home extends React.Component {
+export default class Phim extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
             phimLe: {
+                name: 'xxx',
                 data: [],
                 page: 1,
                 nextPage: true
@@ -34,6 +31,11 @@ export default class Home extends React.Component {
                 page: 1,
                 nextPage: true
             },
+            moiNhat: {
+                data: [],
+                page: 1,
+                nextPage: true
+            },
             trailer: null
         }
     }
@@ -42,12 +44,12 @@ export default class Home extends React.Component {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         };
-
         Axios.get(`${restService}${apiV1}/phimmoi/phim-le/${this.state.phimLe.page}`, requestOptions)
             .then(response=>{
                 if (response.status === 200) {
                     this.setState({isLoading: false, phimLe: response.data})
-                    console.log(this.state.phimLe)
+                    console.log(this.state.phimLe.data)
+
                 }
             }).catch(function (error) {
                 console.log(JSON.stringify(error))
@@ -69,14 +71,16 @@ export default class Home extends React.Component {
         }
         return(
             <div className="home">
-                <Header/>
                 <HomeTrailer className = 'home__trailer'
                     key={this.state.page}
                     trailer={this.state.trailer}
                 />
-                <HotNew/>
-
-
+                <ListFilm
+                    key={this.state.isLoading}
+                    tabName = {this.state.phimLe.name}
+                    data = {this.state.phimLe.data}
+                />
+                
             </div>   
         )
     }
