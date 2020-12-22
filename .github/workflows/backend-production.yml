@@ -33,16 +33,12 @@ jobs:
 
     # [Step-1] check config git
     - uses: actions/checkout@v2
+
+    # [Step-1.1] get version tag
     - name: get_version
       id: vars
       run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-    - name: Check output
-      env:
-        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-      run: |
-          echo $RELEASE_VERSION
-          echo ${{ steps.vars.outputs.tag }}
-          
+              
     # [Step-2] login dockerhub container
     - name: Login to DockerHub Registry
       run: |
@@ -51,9 +47,9 @@ jobs:
     # [Step-3] buid and tag image from Dockerfile
     - name: Build and tag the image
       run: |
-        docker build -t $BASE_IMAGE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:$RELEASE_VERSION ./backend/
+        docker build -t $BASE_IMAGE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:${{ steps.vars.outputs.tag }} ./backend/
     
     # [Step-4] Push image to docker hub
     - name: Push image to DockerHub
       run: |
-        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:$RELEASE_VERSION
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:${{ steps.vars.outputs.tag }}
