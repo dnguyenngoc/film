@@ -17,7 +17,7 @@ WORKDIR /app/
 COPY ./app/ /app/
 
 RUN  npm ci \
-    && npm run ${BUILD_CMD} || true \
+    && npm run ${BUILD_CMD} \
     && rm -rf node_modules
 
 
