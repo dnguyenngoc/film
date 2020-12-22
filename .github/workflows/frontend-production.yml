@@ -2,14 +2,14 @@ name: PRODUCTION
 on:
   push:
     tags:
-    - ${{ steps.vars.outputs.tag }}
+    - 'frontend-v*.*.*'
     paths:
     - frontend/**
     branches:
     - main
   pull_request:
     tags:
-    - ${{ steps.vars.outputs.tag }}
+    - 'frontend-v*.*.*'
     paths:
     - frontend/**
     branches:
