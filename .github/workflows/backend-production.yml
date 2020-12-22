@@ -3,15 +3,11 @@ on:
   push:
     tags:
     - 'backend-v*.*.*'
-    paths:
-    - backend/**
     branches:
     - main
   pull_request:
     tags:
     - 'backend-v*.*.*'
-    paths:
-    - backend/**
     branches:
     - main
 env:
