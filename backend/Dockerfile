@@ -1,14 +1,23 @@
-FROM python:3.9-buster
+#===============================================
+#========  Using Node js build Imange ==========
+#===============================================
+FROM python:3.8-buster
 
 LABEL maintainer="Duy Nguyen <duyngunyenngoc@hotmail.com>"
 
+ENV PYTHONPATH "${PYTHONPATH}:/app"
+
 WORKDIR /app/
 
-COPY ./requirements.txt requirements.txt
+RUN pip3 install pipenv
 
-COPY ./app/ /app/
+COPY Pipfile* /app/
+
+RUN pipenv lock --requirements > requirements.txt
 
 RUN pip3 install -r requirements.txt
+
+COPY ./app/ /app/
 
 RUN chmod +x migrations/restore.sh
 

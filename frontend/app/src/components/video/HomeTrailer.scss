@@ -1,0 +1,33 @@
+.null__trailer {
+    background-color: #BA1E0B;
+    height: 600px;
+    width: auto;
+    display: block;
+}
+.home__trailer{
+    background-color: rgb(212, 154, 46);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    .content__video{
+        video {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position:static;
+        }
+    }
+    .content__detail{
+        position: stickly;
+        margin-top: 42rem;
+    }
+}

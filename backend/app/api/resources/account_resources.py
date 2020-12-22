@@ -1,3 +1,4 @@
+# Import Library
 from flask import Blueprint
 from flask import jsonify
 from flask import request
@@ -22,6 +23,7 @@ def login():
     return exception.custom405()
 
 
+# -------------------------------------------------------------------------------------------
 @router.route('/accounts/fresh-token', methods = ["POST"])
 @token_required
 def fresh_token(user):
@@ -29,5 +31,15 @@ def fresh_token(user):
         form = request.form
         if _res.FreshTokenRequestForm(form).validate():
             return control.fresh_token(user)
+        return exception.custom422()
+    return exception.custom422()
+
+# -------------------------------------------------------------------------------------------
+@router.route('/accounts/register', methods = ["POST"])
+def register():
+    if request.method == "POST":
+        form = request.form
+        if _res.RegistrationRequestForm(form).validate():
+            return control.register(form)
         return exception.custom422()
     return exception.custom422()

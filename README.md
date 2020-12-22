@@ -20,33 +20,39 @@ Overview
   width="200"
 />
 
-[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friends can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application (~o~).
+[Film Project](https://github.com/dnguyenngoc/film) is a website for myself and my friends can easy get more information from internet like game, film, news, sport . A modern, funny and cute web application :fire: :fire: :fire:.
 
 ## Screenshots & Gifs
 
 **Gallery**
 
-<kbd><a href="https://github.com/dnguyenngoc/film"><img title="Gallery" src="https://github.com/dnguyenngoc/film/blob/main/statics/image.jpg?raw=true"></a></kbd><br/>
+<kbd>
+  <a href="https://github.com/dnguyenngoc/film">
+    <img title="Gallery" src="https://github.com/dnguyenngoc/film/blob/main/statics/ga.png?raw=true">
+  </a>
+</kbd>
+<br/>
 
 
 
 <!-- Just some document for backend and frontend -->
 Documentation
 =======
+Project Link: [https://github.com/dnguyenngoc/film](https://github.com/dnguyenngoc/film.git)
 
 ## Backend
 
-will be update soon!
+Document Link: (https://github.com/dnguyenngoc/film/blob/master/backend/README.md)
 
 ## Frontend
 
-will be update soon!
+Document Link: (https://github.com/dnguyenngoc/film/blob/master/fronted/README.md)
 
 
 <!--follow intagram or CONTACT to me if you have any question? -->
 Contact
 =======
 
-Duy Nguyen - [@duy.nguyen.ngoc](https://www.instagram.com/duy.nguyen.ngoc/) - duynguyenngoc@hotmail.com
+Instagram: [@duy.nguyen.ngoc](https://www.instagram.com/duy.nguyen.ngoc/) :heart: :heart: :heart: 
 
-Project Link: [https://github.com/dnguyenngoc/film](https://github.com/dnguyenngoc/film.git)
+Email: duynguyenngoc@hotmail.com

@@ -1,9 +1,10 @@
-import Home from "../components/views/Home";
-import Login from "../components/views/Login";
-import ContactUs from "../components/views/ContactUs";
+import Home from "../screens/home/Home";
+import Phim from "../screens/home/Phim";
+
+
 
 const HOME = { component: Home, path: "/home", isPrivate: false };
-const LOGIN = { component: Login, path: "/login", isPrivate: false };
-const CONTACTUS = { component: ContactUs, path: "/contact-us", isPrivate: false };
+const PHIM = { component: Phim, path: "/phim", isPrivate: false };
+// const PHIMLE = { component: Watch, path: "/phim-le", isPrivate: false };
 
-export default [HOME, LOGIN, CONTACTUS];
+export default [HOME, PHIM];
