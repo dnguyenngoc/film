@@ -47,9 +47,9 @@ jobs:
     # [Step-3] buid and tag image from Dockerfile
     - name: Build and tag the image
       run: |
-        docker build -t $BASE_IMAGE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:${{ steps.vars.outputs.tag }} ./backend/
+        docker build -t $BASE_IMAGE -t $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE-${{ steps.vars.outputs.tag }} ./backend/
     
     # [Step-4] Push image to docker hub
     - name: Push image to DockerHub
       run: |
-        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:${{ steps.vars.outputs.tag }}
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE-${{ steps.vars.outputs.tag }}
