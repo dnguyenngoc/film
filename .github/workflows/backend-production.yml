@@ -1,15 +1,19 @@
 name: PRODUCTION
 on:
   push:
-    branches:
+    tags:
     - 'v*.*.*'
     paths:
     - backend/**
+  branches:
+    - main
   pull_request:
-    branches:
-    - production
-    paths:
+    tags:
     - 'v*.*.*'
+    paths:
+    - backend/**
+    branches:
+    - main
 env:
   # Variable name
   PROJECT_NAME: film
