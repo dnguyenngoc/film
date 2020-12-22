@@ -1,15 +1,19 @@
 name: PRODUCTION
 on:
   push:
-    branches:
-    - production
+    tags:
+    - ${{ steps.vars.outputs.tag }}
     paths:
     - frontend/**
+    branches:
+    - main
   pull_request:
-    branches:
-    - production
+    tags:
+    - ${{ steps.vars.outputs.tag }}
     paths:
     - frontend/**
+    branches:
+    - main
 env:
   # Variable name
   PROJECT_NAME: film
