@@ -30,6 +30,10 @@ jobs:
     # [Step-1] check config git
     - uses: actions/checkout@v2
 
+    - name: get_version
+      run:
+        echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
     # [Step-2] login dockerhub container
     - name: Login to DockerHub Registry
       run: |
@@ -43,4 +47,4 @@ jobs:
     # [Step-4] Push image to docker hub
     - name: Push image to DockerHub
       run: |
-        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE
+        docker push $DOCKERHUB_USERNAME/$PROJECT_NAME:$BASE_IMAGE:VERSION
