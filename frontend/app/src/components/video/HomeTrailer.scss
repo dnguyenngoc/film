@@ -1,3 +1,9 @@
+.null__trailer {
+    background-color: #BA1E0B;
+    height: 600px;
+    width: auto;
+    display: block;
+}
 .home__trailer{
     background-color: rgb(212, 154, 46);
     top: 0;
@@ -18,17 +24,10 @@
             align-items: center;
             overflow: hidden;
             position:static;
-
         }
     }
     .content__detail{
         position: stickly;
         margin-top: 42rem;
     }
-}
-.null__trailer {
-    background-color: #BA1E0B;
-    height: 600px;
-    width: auto;
-    display: block;
 }

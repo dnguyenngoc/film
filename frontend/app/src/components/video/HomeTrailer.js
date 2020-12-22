@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomeTrailer.scss'
 import fake from './Gravity - 2K Trailer.mp4'
+import ContentStickly from  '../../components/film/ContentStickly';
 
 
 const HomeTrailer = ({ trailer }) => {
@@ -20,7 +21,10 @@ const HomeTrailer = ({ trailer }) => {
                     src={fake}
                 />
             </div>
+            <ContentStickly/>
         </div>
+        
+
     )
 }
 export default HomeTrailer;

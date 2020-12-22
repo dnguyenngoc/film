@@ -6,6 +6,7 @@ import HomeTrailer from  '../../components/video/HomeTrailer';
 import ListFilm from  '../../components/scoll/ListFilm';
 
 
+
 const apiV1 = '/api/v1'
 const restService = 'http://localhost:8080'
 
@@ -15,7 +16,6 @@ export default class Phim extends React.Component {
         this.state = {
             isLoading: true,
             phimLe: {
-                name: 'xxx',
                 data: [],
                 page: 1,
                 nextPage: true
