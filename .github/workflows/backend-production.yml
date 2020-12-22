@@ -33,15 +33,16 @@ jobs:
 
     # [Step-1] check config git
     - uses: actions/checkout@v2
-
     - name: get_version
       id: vars
       run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-
     - name: Check output
       env:
         RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-
+      run: |
+          echo $RELEASE_VERSION
+          echo ${{ steps.vars.outputs.tag }}
+          
     # [Step-2] login dockerhub container
     - name: Login to DockerHub Registry
       run: |
